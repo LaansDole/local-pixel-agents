@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import type { ConversationEntry } from '../hooks/useExtensionMessages.js'
 import { vscode } from '../vscodeApi.js'
-import { ExpandableText } from './ExpandableText.js'
+import { MarkdownText } from './MarkdownText.js'
 import {
   PANEL_FONT,
   PANEL_FONT_SIZE_MIN,
@@ -264,7 +264,7 @@ export function ConversationPanel({ isOpen, onClose, entries, agentIds, isAutoMo
                 <div style={{ fontSize: labelSize, fontFamily: PANEL_FONT, color, fontWeight: 'bold', marginBottom: '2px' }}>
                   {label}
                 </div>
-                <ExpandableText
+                <MarkdownText
                   text={entry.text}
                   previewLength={500}
                   style={{
@@ -273,7 +273,6 @@ export function ConversationPanel({ isOpen, onClose, entries, agentIds, isAutoMo
                     color: 'rgba(255, 255, 255, 0.75)',
                     lineHeight: 1.3,
                     wordBreak: 'break-word',
-                    whiteSpace: 'pre-wrap',
                   }}
                 />
               </div>

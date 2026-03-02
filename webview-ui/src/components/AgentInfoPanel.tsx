@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import type { ConversationEntry } from '../hooks/useExtensionMessages.js'
-import { ExpandableText } from './ExpandableText.js'
+import { MarkdownText } from './MarkdownText.js'
 import {
   PANEL_FONT,
   PANEL_FONT_SIZE_MIN,
@@ -233,7 +233,7 @@ export function AgentInfoPanel({
         ) : (
           agentMessages.map((entry, i) => (
             <div key={i} style={{ marginBottom: 10 }}>
-              <ExpandableText
+              <MarkdownText
                 text={entry.text}
                 previewLength={300}
                 style={{
@@ -242,7 +242,6 @@ export function AgentInfoPanel({
                   color: 'rgba(255, 255, 255, 0.8)',
                   lineHeight: 1.4,
                   wordBreak: 'break-word',
-                  whiteSpace: 'pre-wrap',
                 }}
               />
             </div>
